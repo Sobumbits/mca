@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Example</title>
+</head>
+<body>
+<p>Floor</p>
+<input type="number" id="first">/
+<input type="number" id="second">
+<input type="button" onclick="div()" value="="><p id="result"></p><br>
+<p>Concatinate Two Strings</p>
+<input type="text" id="firstn" placeholder="First name"><br>
+<input type="text" id="secondn" placeholder="Last name"><br>
+<input type="submit" onclick="con()" value="Concatinate"><br>
+<p id="result2"></p>
+
+<script type="text/javascript" language="javascript">
+	function div(){
+	var f = document.getElementById('first').value;
+	var s = document.getElementById('second').value;
+	var v = parseInt(f)/parseInt(s);
+	var div = Math.floor(v);
+	document.getElementById('result').innerHTML = 'Floor = '+div+'<br> Ceil = '+Math.ceil(v)+'<br> Root = '+Math.sqrt(v);
+
+}
+
+function con(){
+	var f = document.getElementById('firstn').value;
+	var s = document.getElementById('secondn').value;
+	var n = f.concat(" ",s);
+	document.getElementById('result2').innerHTML = 'concatination '+n+'<br> Length: '+n.length+'<br> Repeat : '+n.repeat(2);
+
+}
+</script>
+</body>
+</html>

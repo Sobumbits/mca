@@ -1,0 +1,46 @@
+
+<html >
+<head>
+    <title>JavaScript Events</title>
+</head>
+<body onload="loads()">    
+    <button onclick="clicked()">Onclick</button><br><br>
+	<button  onmouseover="mouse()">Mouse Over</button><br><br>
+	<button  onmouseout="mouseout()">Mouse Out</button><br><br>
+    <input type="text" onkeydown="keydown(this)" placeholder="Keydown"><br><br>
+    <input type="text" onkeyup="keyupEvent(this)" placeholder="Keyup"><br><br>
+	<select onchange="change(this)">
+		<option>district</option>
+		<option>State</option>
+	</select>
+	
+    
+    <script>
+        function change(val){
+            alert("You changed to."+val.value);
+        }
+	function clicked(){
+            alert("You clicked on click function.");
+        }
+	function loads(){
+            alert("page has loaded!!");
+        }
+
+        function mouse(){
+            alert("Mouse over function.");
+        }
+
+        function mouseout(){
+            alert("Mouse out function.");
+        }
+
+        function keydown(inputElement){
+            alert("Keydown event detected. Current value: " + inputElement.value);
+        }
+
+        function keyupEvent(inputElement){
+            alert("Keyup event detected. Current value: " + inputElement.value);
+        }
+    </script>
+</body>
+</html>
