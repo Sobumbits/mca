@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <input type="number" id="first"><br>
+<input type="number" id="second"><br>
+<input type="submit" onclick="add()" value="add"><br>
+<p id="result"></s>
+<script type="text/javascript" language="javascript">
+	function add(){
+	var f = document.getElementById('first').value;
+	var s = document.getElementById('second').value;
+	document.getElementById('result').innerHTML = 'The sum is '+(parseInt(f) + parseInt(s));
+
+}
+</script>
+</body>
+</html>

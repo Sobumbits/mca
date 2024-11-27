@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Javascript</title>
+<body>
+<h1>Registration Form</h1>
+ 
+	<input type="text" id="fname" ><p id="fname_r" style="color:red;display:none;"></p><br>
+	<input type="text" id="lname" ><p id="lname_r" style="color:red;display:none;"></p><br>
+	<input type="submit" onclick="display()"><br>
+
+<p id="name"></p>
+<script type="text/javascript" language="javascript">
+function display(){
+	var f = document.getElementById('fname').value;
+	var l = document.getElementById('lname').value;
+if(f!='' && l!='' ){
+	document.getElementById('name').innerHTML = `My name is , ${f} ${l}!`;
+	document.getElementById('fname_r').style.display = 'none';
+	document.getElementById('lname_r').style.display = 'none';
+
+
+}else{
+	document.getElementById('fname_r').style.display = 'block';
+	document.getElementById('lname_r').style.focus = 'block';
+	document.getElementById('fname_r').innerHTML = 'first name is required';
+	document.getElementById('lname_r').innerHTML = 'Last name is required';
+}
+	 
+}
+
+</script>
+</body>
+</html>

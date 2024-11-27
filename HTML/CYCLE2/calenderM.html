@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calendar</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid black; /* Fixed typo: "I px" to "1px" */
+            padding: 5px; /* Fixed typo: "l 5px" to "5px" */
+            text-align: center;
+            font-size: 16px; /* Fixed typo: "l 6px" to "16px" */
+        }
+        .th {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter Year to Generate Calendar:</h2>
+    <input type="number" id="yearinput">
+    <button onclick="generateCalendar()">Generate Calendar</button> <!-- Fixed "on click" to "onclick" -->
+    <h2 id="calendarYear">Calendar for <span id="displayYear"></span></h2>
+    <div id="calendar"></div>
+    
+    <script>
+        function generateCalendar() { // Fixed function name typo: generateCalendarr to generateCalendar
+            var year = document.getElementById("yearinput").value; // Fixed typo in "getElementById"
+            var calendarYearHeading = document.getElementById("calendarYear"); // Fixed typo in "getElementById"
+            calendarYearHeading.textContent = "Calendar for " + year;
+            var calendar = "<table>"; // Removed extra spaces in tags
+
+            for (var month = 0; month < 12; month++) {
+                calendar += "<tr><th colspan='7'>" + getMonthName(month) + "</th></tr>";
+                calendar += "<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr><tr>";
+
+                var daysInMonth = new Date(year, month + 1, 0).getDate();
+                var firstDay = new Date(year, month, 1).getDay(); // Fixed incorrect month in "new Date"
+
+                for (var i = 0; i < firstDay; i++) {
+                    calendar += "<td></td>";
+                }
+                for (var day = 1; day <= daysInMonth; day++) { // Fixed typo "dayslnMonth" to "daysInMonth"
+                    calendar += "<td>" + day + "</td>";
+                    if (new Date(year, month, day).getDay() === 6) {
+                        calendar += "</tr><tr>";
+                    }
+                }
+                calendar += "</tr>";
+            }
+            calendar += "</table>";
+            document.getElementById("calendar").innerHTML = calendar; // Fixed typo in "getElementById"
+        }
+
+        function getMonthName(monthIndex) {
+            var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]; // Fixed typo in "monthNames" array
+            return monthNames[monthIndex];
+        }
+    </script>
+</body>
+</html>

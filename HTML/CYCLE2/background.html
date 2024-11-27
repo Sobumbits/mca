@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Background Color Change</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+  </style>
+</head>
+<body>
+  <h1>The background color changes every second!</h1>
+
+  <script>
+    function changeBackgroundColor() {
+      const colors = ['#FF5733', '#33FF57', '#3357FF', '#F3FF33', '#FF33E4', '#33FFF6'];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
+    }
+
+    // Change background color every second (1000ms)
+    setInterval(changeBackgroundColor, 500);
+  </script>
+</body>
+</html>
