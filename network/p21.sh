@@ -38,3 +38,18 @@ read -p "Enter Basic Salary : " basic_salary
 calculate_salary $emp_no "$emp_name" $basic_salary
 
 echo "Employee details stored in Emp_Data.txt"
+
+
+#Enter Employee Number : 101
+#Enter Employee Name : sobu
+#Enter Basic Salary : 15000
+#Employee Number : 101
+#Employee Name : sobu
+#Basic Salary : 15000
+#HRA : 2700
+#DA : 5250
+#PF : 1950
+#TA : 1500
+#Gross Salary : 24450
+#Net Salary : 22500
+#Employee details stored in Emp_Data.txt
