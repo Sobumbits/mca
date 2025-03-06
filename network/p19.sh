@@ -47,63 +47,63 @@ case $choice in
 esac
 
 
-Enter the filename:
-1.sh
-Files exists. Choose an operation:
-1. Copy
-2. Edit
-3. Rename
-4. Delete
-5. Exit
-Enter your choice: 1
-Enter destination of filename: newq.sh
-File copied successfully.
+#Enter the filename:
+#1.sh
+#Files exists. Choose an operation:
+#1. Copy
+#2. Edit
+#3. Rename
+#4. Delete
+#5. Exit
+#Enter your choice: 1
+#Enter destination of filename: newq.sh
+#File copied successfully.
 
 
-Enter the filename:
-1.sh
-Files exists. Choose an operation:
-1. Copy
-2. Edit
-3. Rename
-4. Delete
-5. Exit
-Enter your choice: 2
+#Enter the filename:
+#1.sh
+#Files exists. Choose an operation:
+#1. Copy
+#2. Edit
+#3. Rename
+#4. Delete
+#5. Exit
+#Enter your choice: 2
 
 
-Enter the filename:
-1.sh
-Files exists. Choose an operation:
-1. Copy
-2. Edit
-3. Rename
-4. Delete
-5. Exit
-Enter your choice: 3 
-Enter new filename: newq1
-File renamed successfully.
+#Enter the filename:
+#1.sh
+#Files exists. Choose an operation:
+#1. Copy
+#2. Edit
+#3. Rename
+#4. Delete
+#5. Exit
+#Enter your choice: 3 
+#Enter new filename: newq1
+#File renamed successfully.
 
 
-Enter the filename:
-newq1
-Files exists. Choose an operation:
-1. Copy
-2. Edit
-3. Rename
-4. Delete
-5. Exit
-Enter your choice: 4
-File deleted successfully.
+#Enter the filename:
+#newq1
+#Files exists. Choose an operation:
+#1. Copy
+#2. Edit
+#3. Rename
+#4. Delete
+#5. Exit
+#Enter your choice: 4
+#File deleted successfully.
 
 
-Enter the filename:
-2.sh
-Files exists. Choose an operation:
-1. Copy
-2. Edit
-3. Rename
-4. Delete
-5. Exit
-Enter your choice: 5
-exiting program.
+#Enter the filename:
+#2.sh
+#Files exists. Choose an operation:
+#1. Copy
+#2. Edit
+#3. Rename
+#4. Delete
+#5. Exit
+#Enter your choice: 5
+#exiting program.
 
