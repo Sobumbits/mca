@@ -19,3 +19,9 @@ fibonacci(){
 read -p "Enter the number of terms: " num
 
 fibonacci $num
+
+
+#Enter the number of terms: 5
+#fibonacci series up to 5 terms : 
+#0 1 1 2 3 
+
