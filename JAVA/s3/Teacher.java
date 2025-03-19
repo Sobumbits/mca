@@ -1,33 +1,16 @@
 import java.util.Scanner;
-class Person{
-
+class Employee{
+	int empid;
 	String name;
-	String gender;
-	int age;
+	double salary;
 	String address;
 	
 	
-	Person(String name,String gender,int age,String address){
-		this.age=age;
-		this.name=name;
-		this.gender=gender;
-		this.address=address;
-	
-	}
-}
-class Employee extends Person{
-	int empid;
-	String c_name;
-	String qual;
-	double sal;
-	
-	
-	Employee(String name,String gender,int age,String address,int empno,String c_name,double sal,String qual){
-super(name,gender,age,address);
+	Employee(int empno,String emp_name,double sal,String add){
 		this.empid=empno;
-		this.c_name=c_name;
-		this.sal=sal;
-		this.qual=qual;
+		this.name=emp_name;
+		this.salary=sal;
+		this.address=add;
 	
 	}
 }
@@ -35,63 +18,47 @@ super(name,gender,age,address);
 class Teacher extends Employee{
 	String dept;
 	String sub;
-	int tid;
-	Teacher(String name,String gender,int age,String address,int empno,String c_name,double sal,String qual,String dept1,String sub1,int tid){
-	super(name,gender,age,address,empno,c_name,sal,qual);
+	Teacher(int empno,String emp_name,double sal,String add,String dept1,String sub1){
+	super(empno,emp_name,sal,add);
 	this.dept=dept1;
 	this.sub=sub1;
-	this.tid=tid;
 }
 
 void display(){
 	System.out.println("Employee id: "+empid);
 	System.out.println(" Name: "+name);
-	System.out.println(" Gender: "+gender);
-	System.out.println(" Age: "+age);
+
+	System.out.println(" Salary: "+salary);
+
 	System.out.println("Address: "+address);
 
 	System.out.println(" Department: "+dept);
 	System.out.println("Subject : "+sub);
-	System.out.println("Teacher ID : "+tid);
 
-	System.out.println("\n\nCompany Name: "+c_name);
-	System.out.println("Qualification: "+qual);
-	System.out.println("Salary: "+sal);
-	System.out.println("\n\n");
+
 }
 
 public static void main(String args[]){
-	System.out.println("\nEnter the no. of teachers");
+	System.out.println("\nEnter the no. of employees");
 	Scanner sc = new Scanner(System.in);
 	int num = sc.nextInt();
 	Teacher[] arr = new Teacher[num];
 	for (int i =0;i<num;i++){
 		Scanner sc1 = new Scanner(System.in);
-
-		System.out.println("\nEnter Name:");
+		System.out.println("\nEnter employee id:");
+		int emp_id = sc1.nextInt();
+		System.out.println("\nEnter employee Name:");
 		String empname = sc1.next();
-		System.out.println("\nEnter Gender:");
-		String gender = sc1.next();
-		System.out.println("\nEnter Adrress:");
-		String add = sc1.next();
-		System.out.println("\nEnter Age:");
-		int age = sc1.nextInt();
-		System.out.println("\nEnter Employee id:");
-		int empid = sc1.nextInt();
-		System.out.println("\nEnter Company Name:");
-		String cname = sc1.next();
-		System.out.println("\nEnter Qualification:");
-		String qua = sc1.next();
 		System.out.println("\nEnter Salary:");
-		double salary = sc1.nextDouble();
+		double empsal = sc1.nextDouble();
+		System.out.println("\nEnter Adrress:");
+		String empadd = sc1.next();
 		System.out.println("\nEnter Department:");
 		String depat = sc1.next();	
 		System.out.println("\nEnter Subject:");
-		String subj = sc1.next();
-		System.out.println("\nEnter Teacher id:");
-		int teid = sc1.nextInt();		
+		String subj = sc1.next();		
 		
-		arr[i] = new Teacher(empname,gender,age,add,empid,cname,salary,qua,depat,subj,teid);
+		arr[i] = new Teacher(emp_id,empname,empsal,empadd,depat,subj);
 	}
 
 			System.out.println("\n---------------Information of all Employees ----------------");
