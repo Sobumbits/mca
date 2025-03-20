@@ -1,5 +1,11 @@
 #!/bin/bash
+
+while true
+do
+echo 
+echo 
 echo "------MENU------"
+echo 
 echo "1. Search for a movie name in a file"
 
 echo "2. Count occurrences of a movie name"
@@ -13,7 +19,7 @@ echo "5.Count total movies (words) in the file"
 echo "6.Replace a movie name in the file"
 
 read -p "Choose an option : " opt
-
+echo 
 case $opt in
 	1) echo "Enter the filename :"
 		read filename
@@ -54,6 +60,8 @@ case $opt in
 		read newword
 		sed -i "s/$oldword/$newword/g" "$filename"
 		;;
+	7) exit 0
+		;;
 	*) echo "Invalid option....";
 	esac
-	
+done
