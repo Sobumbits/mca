@@ -313,3 +313,4 @@ public class WelcomeMainActivity extends AppCompatActivity {
         textViewDetails.setText("Phone: " + phone + "\nEmail: " + email + "\nGender: " + gender);
     }
 }
+// Add <activity android:name=".WelcomeMainActivity" /> to AndroidManifest.xml
