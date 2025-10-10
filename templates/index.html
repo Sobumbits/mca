@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🚨 Scream Detector Web</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script>
+        let isRunning = false;
+
+        async function startDetection() {
+            await fetch("/start");
+            isRunning = true;
+            updateButtonStyles();
+        }
+
+        async function stopDetection() {
+            await fetch("/stop");
+            isRunning = false;
+            updateButtonStyles();
+        }
+
+        async function updateStatus() {
+            const res = await fetch("/status");
+            const data = await res.json();
+            document.getElementById("status").innerText = data.message;
+            document.getElementById("status").style.color = data.color;
+        }
+
+        function updateButtonStyles() {
+            const startBtn = document.getElementById("startBtn");
+            const stopBtn = document.getElementById("stopBtn");
+
+            if (isRunning) {
+                startBtn.classList.add("active");
+                stopBtn.classList.remove("active");
+            } else {
+                stopBtn.classList.add("active");
+                startBtn.classList.remove("active");
+            }
+        }
+
+        setInterval(updateStatus, 1000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>🎤 Real-Time Scream Detection</h1>
+        <p id="status">Idle</p>
+        <button id="startBtn" onclick="startDetection()" class="start">▶️ Start</button>
+        <button id="stopBtn" onclick="stopDetection()" class="stop">⏹ Stop</button>
+    </div>
+</body>
+</html>
